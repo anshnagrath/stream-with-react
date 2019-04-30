@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"json-server -p 3001 -w db.json"
+    "start":"json-server -p 3001 -w db.json",
+    "test":"json-server db.json --middlewares ./server.js"
   },
   "keywords": [],
   "author": "",

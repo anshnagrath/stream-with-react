@@ -16,9 +16,9 @@ class StreamList extends Component{
                 <Link to={`/streams/edit/${stream.id}`} className="ui button primary">
                  Edit
                 </Link>
-                <button className="ui button red">
+                <Link to={`/streams/delete/${stream.id}`} className="ui button red">
                  Delete
-                </button>
+                </Link>
                 </div>
             )
         }
@@ -35,7 +35,7 @@ class StreamList extends Component{
         }
     }
     renderList(){
-        console.log(this.props,'propppps')
+        console.log(this.props.streams,'changeInProps')
         
      return this.props.streams.map( stream=>{ 
         

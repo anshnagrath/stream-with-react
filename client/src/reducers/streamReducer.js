@@ -1,5 +1,6 @@
 import _ from "lodash"
 export default (state =  {} ,action)=>{
+console.log(action,'acyion')
     switch(action.type){
         case "FETCH_STREAM":
         return {...state,[action.payload.id]:action.payload};
@@ -8,7 +9,7 @@ export default (state =  {} ,action)=>{
         case "EDIT_STREAM":
         return {...state,[action.payload.id]:action.payload}
         case"DELETE_STREAM":
-        return _.omit(state,action.payload.id)
+        return _.omit(state,action.payload)
         case "FETCH_STREAMS":
         console.log({...state,..._.mapKeys(action.payload,'id')},'iddddddddd')
         return {...state,..._.mapKeys(action.payload,'id')}
@@ -16,3 +17,8 @@ export default (state =  {} ,action)=>{
         return state
     }
 }
+const deleteWithoutMutatinf = (obj, prop) => {
+    let res = Object.assign({}, obj)
+    delete res[prop]
+    return res
+  }
