@@ -17,8 +17,3 @@ console.log(action,'acyion')
         return state
     }
 }
-const deleteWithoutMutatinf = (obj, prop) => {
-    let res = Object.assign({}, obj)
-    delete res[prop]
-    return res
-  }
